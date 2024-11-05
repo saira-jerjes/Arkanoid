@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arkanoid</title>
+    <link href="/assets/css/index.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="canvas-container" id="canvas-container">
+      <div class="home" id="home">
+        <div id="startscreen" class="startscreen">
+          <button id="start-button" class="btn">Start</button>
+        </div>
+        <canvas id="canvas" width="1200" height="800"></canvas>
+        <div class="winModal" id="winModal">
+          <img class="win"
+            src="/assets/imgs/win.png"
+            alt="van gogh sunflowers"
+            width="200"
+            height="200"
+          />
+          You've <strong>WON!</strong>
+          <br />
+          <a href="/index.html"><button class="again">Try it again</button></a>
+          <p id="scoreDisplay"></p>
+        </div>
+        <div class="loseModal" id="loseModal">
+          You've <strong>LOST!</strong>  <br />
+          <a href="/index.html"><button class="again">Try it again</button></a>
+          <p id="loseScoreDisplay"></p>
+        </div>
+        <button class="pauseMusic" id="pauseMusic"><div class="muted-note">♫</div></button>
+      </div>
+    </div>
+    <script src="/assets/js/constants.js"></script>
+    <script src="assets/js/brick.js"></script>
+    <script src="assets/js/paddle.js"></script>
+    <script src="assets/js/ball.js"></script>
+    <script src="/assets/js/background.js"></script>
+    <script src="assets/js/game.js"></script>
+    <script src="assets/js/index.js"></script>
+  </body>
+</html>

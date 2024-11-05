@@ -1,0 +1,201 @@
+body {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: middle;
+}
+
+.canvas-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0,5), rgba(0, 0, 0, 1));
+  
+}
+
+#startscreen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: url("/assets/imgs/bg-museum.webp") no-repeat,
+    url("/assets/imgs/fondo.webp") no-repeat;
+  background-size: cover;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.2s ease-in-out;
+  opacity: 1;
+  border: 5px solid beige;
+}
+
+#startscreen.hidden {
+  opacity: 0;
+}
+
+#start-button {
+  position: relative;
+  border-radius: 5px;
+  border: transparent;
+  width: 150px;
+  height: 100px;
+  padding: 5px;
+  line-height: 1.3em;
+  font-size: 22px;
+  z-index: 2;
+  cursor: pointer;
+  filter: drop-shadow(10px 5px 5px rgba(0, 0, 0, 0.5));
+  background-color: #d4a4f0;
+  color: rgb(0, 0, 0);
+  transition: background-color 0.2s ease-in-out, color 0.3s ease-in-out;
+}
+
+
+#start-button:hover {
+  background-color: #9352b9;
+  color: white;
+}
+
+#pauseMusic {
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 5px;
+  border: transparent;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  line-height: 1.1em;
+  font-size: 14px;
+  z-index: 2;
+  cursor: pointer;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+  background-color: #d4a4f0;
+  color: rgb(0, 0, 0);
+  bottom: 800px;
+  right: -1165px;
+  transition: background-color 0.1s ease-in-out, color 0.2s ease-in-out;
+}
+
+#pauseMusic:hover {
+  background-color: #9352b9;
+  color: white;
+}
+
+canvas {
+  margin-top: 20px;
+  border: 5px solid beige;
+  display: block;
+  z-index: 0;
+} 
+
+.loseModal {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  padding: 15px;
+  border-radius: 5px;
+  border: transparent;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+  width: 300px;
+  height: 300px;
+  line-height: 1.3em;
+  font-size: 52px;
+  z-index: 2;
+  bottom: 550px;
+  left: 450px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  justify-content: center;
+  text-align: center;
+  align-items: middle;
+  color: aliceblue;
+  background-color: #d4a4f0;
+}
+
+.winModal{
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  padding: 3px;
+  border-radius: 5px;
+  border: transparent;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+  width: 600px;
+  height: 500px;
+  line-height: 1.3em;
+  font-size: 58px;
+  z-index: 2;
+  bottom: 700px;
+  left: 25%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  justify-content: center;
+  text-align: center;
+  align-items: middle;
+  color: aliceblue;
+  background-color: #d4a4f0;
+}
+
+.win{
+  position: relative;
+  display: flex;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+  left: 40%;
+}
+
+a {
+  text-decoration: none;
+  font-size: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.again { 
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: transparent;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+  width: 100px;
+  height: 40px;
+  line-height: 1.2em;
+  cursor: pointer;
+  margin-bottom: 30px;
+  background-color: #c170ef ;
+  color: black;
+}
+
+.again:hover{
+  background-color: #9352b9;
+  color: white;
+}
+
+#scoreDisplay, #loseScoreDisplay {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  justify-content: center;
+  text-align: center;
+  color: aliceblue;
+  font-size: 45px;
+}
+
+.muted-note {
+  position: relative;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.muted-note::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 4px;
+  width: 100%;
+  height: 2px;
+  background: black; 
+  transform: rotate(45deg);
+  transform-origin: top left;
+}
+
+.muted-note.paused::after {
+  background: transparent; 
+}
